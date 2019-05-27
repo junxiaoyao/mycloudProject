@@ -1,31 +1,27 @@
 package com.jxy.studycloud.lincense.controller;
 
-import com.jxy.studycloud.config.BeanConfig;
-import com.jxy.studycloud.lincense.service.LicenseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.jxy.studycloud.lincense.entity.License;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.Random;
 
 /**
- * @description
- * @author: jxy
- * @create: 2019-05-27 11:27
+ * @Auther: jxy
+ * @Date: 2019/5/27 20:52
+ * @Description:license控制器
  */
 @RestController
-@RequestMapping("/license")
+@RequestMapping(value = "license/organizations/{organizationId}/license")
 public class LicenseController {
-
-  @Autowired
-  LicenseService service;
-
-  @Autowired
-  RestTemplate restTemplate;
-
-  @RequestMapping(value = "/say", method = RequestMethod.GET)
-  public String say() {
-    System.out.println(restTemplate);
-    return service.say();
-  }
+    @RequestMapping(value = "/{licenseId}")
+    public License getLicense(@PathVariable("organizationId") Long organizationId, @PathVariable("licenseId") Long licenseId) {
+        License license = new License();
+        license.setId(new Random().nextLong());
+        license.setId(licenseId);
+        license.setOrgId(organizationId);
+        license.setProductName("人事部");
+        return license;
+    }
 }
