@@ -25,6 +25,7 @@ public class LicenseController {
 
   @RequestMapping(value = "/say", method = RequestMethod.GET)
   public String say() {
+    System.out.println(restTemplate);
     return service.say();
   }
 }
