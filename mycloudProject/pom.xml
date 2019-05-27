@@ -76,27 +76,27 @@
 
   </dependencyManagement>
 
-  <build>
-    <!--finalName 父工程名称-->
-    <finalName>mycloudProject</finalName>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <!--过滤开启-->
-        <filtering>true</filtering>
-      </resource>
+  <!--<build>-->
+    <!--&lt;!&ndash;finalName 父工程名称&ndash;&gt;-->
+    <!--<finalName>mycloudProject</finalName>-->
+    <!--<resources>-->
+      <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+        <!--&lt;!&ndash;过滤开启&ndash;&gt;-->
+        <!--<filtering>true</filtering>-->
+      <!--</resource>-->
 
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <configuration>
-          <delimiters>
-            <delimit>$</delimit>
-          </delimiters>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <!--</resources>-->
+    <!--<plugins>-->
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-resources-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<delimiters>-->
+            <!--<delimit>$</delimit>-->
+          <!--</delimiters>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</build>-->
 </project>
